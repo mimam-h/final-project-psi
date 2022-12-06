@@ -1,12 +1,15 @@
 package com.example.final_project_psi
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -23,6 +26,7 @@ private const val ARG_PARAM2 = "param2"
 class FirstFragment : Fragment() {
     lateinit var rvListRecipe: RecyclerView
     lateinit var search: SearchView
+    lateinit var button: Button
     val recipeList = ArrayList<Recipe>()
     val adapter = ListRecipeAdapter(recipeList)
 
@@ -60,6 +64,13 @@ class FirstFragment : Fragment() {
         rvListRecipe = view.findViewById<RecyclerView>(R.id.rvListRecipe)
         rvListRecipe.adapter = adapter
         rvListRecipe.layoutManager = LinearLayoutManager(context)
+
+//        button = view.findViewById(R.id.button)
+
+//        button.setOnClickListener {
+//            val intent = Intent(activity, DetailActivity::class.java)
+//            startActivity(intent)
+//        }
     }
 
     private fun filterList(newText: String?) {

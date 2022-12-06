@@ -1,5 +1,6 @@
 package com.example.final_project_psi
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +15,9 @@ import com.google.android.material.internal.ContextUtils.getActivity
 
 
 class ListRecipeAdapter(var recipeList: ArrayList<Recipe>): RecyclerView.Adapter<ListRecipeAdapter.ListViewHolder>(){
-    inner class ListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
+    inner class ListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+        val context = itemView.context
+    }
 
     fun setFilteredList(filteredList: ArrayList<Recipe>){
         recipeList = filteredList
@@ -26,6 +29,7 @@ class ListRecipeAdapter(var recipeList: ArrayList<Recipe>): RecyclerView.Adapter
         return ListViewHolder(view)
     }
 
+    @SuppressLint("RestrictedApi")
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         holder.itemView.apply{
             var photo = findViewById<ImageView>(R.id.recipe_image)
@@ -38,8 +42,8 @@ class ListRecipeAdapter(var recipeList: ArrayList<Recipe>): RecyclerView.Adapter
                 Toast.makeText(context,recipeList[position].name, Toast.LENGTH_SHORT).show()
             }
             button.setOnClickListener {
-                val intent = Intent(getActivity(this), DetailActivity::class.java)
-                startActivity(intent)
+                val intent = Intent(context, DetailActivity::class.java)
+                context.startActivity(intent)
             }
             namaResep.text = recipeList[position].name
             kategoriResep.text = recipeList[position].category
