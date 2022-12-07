@@ -11,4 +11,6 @@
     <color name="color_2">#607EAA</color>
     <color name="color_3">#EAE3D2</color>
     <color name="color_4">#F9F5EB</color>
+    <color name="button">#FAAB78</color>
+    <color name="grey">#EBEBEB</color>
 </resources>
