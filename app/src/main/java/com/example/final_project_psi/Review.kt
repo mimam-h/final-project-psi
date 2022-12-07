@@ -1,12 +1,13 @@
 package com.example.final_project_psi
+
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Recipe (
-    val photo: Int,
-    val name: String,
+data class Review (
     val category: String,
+    val name: String,
     val creator: String,
-    val ingridients: String
-        ): Parcelable
+    val review: String,
+    val rating: Int
+): Parcelable
