@@ -18,7 +18,7 @@ class ListReviewAdapter(var reviewList: ArrayList<Review>): RecyclerView.Adapter
         return ListViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ListRecipeAdapter.ListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ListReviewAdapter.ListViewHolder, position: Int) {
         holder.itemView.apply{
             var namaReview = findViewById<TextView>(R.id.review_name)
             var kategoriReview = findViewById<TextView>(R.id.review_cat)
@@ -37,6 +37,4 @@ class ListReviewAdapter(var reviewList: ArrayList<Review>): RecyclerView.Adapter
     override fun getItemCount(): Int {
         return reviewList.size?:0
     }
-
-
 }

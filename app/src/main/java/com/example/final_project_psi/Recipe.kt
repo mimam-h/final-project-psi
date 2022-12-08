@@ -7,5 +7,6 @@ data class Recipe (
     val photo: Int,
     val name: String,
     val category: String,
-    val creator: String
+    val creator: String,
+    val ingridients: String
         ): Parcelable

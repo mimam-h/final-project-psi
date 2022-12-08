@@ -70,6 +70,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/button"
+        app:backgroundTint="@color/button"
         android:paddingTop="-3dp"
         android:text="Cook"
         android:textAlignment="center"
